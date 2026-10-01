@@ -1,0 +1,28 @@
+---
+description: Official Polar documentation — fetch live markdown instead of guessing APIs
+alwaysApply: true
+---
+
+# Polar documentation
+
+Use the official Polar docs as the source of truth: [https://polar.sh/docs/introduction](https://polar.sh/docs/introduction)
+
+When implementing billing, checkouts, subscriptions, or Polar webhooks, fetch the relevant page as markdown rather than relying on memory.
+
+- Page markdown: `https://polar.sh/docs/<path>.md` (or request `Accept: text/markdown`)
+- Docs index: [https://polar.sh/docs/llms.txt](https://polar.sh/docs/llms.txt)
+
+This repo’s app is Next.js (`flashycardy`). Start with:
+
+- [Introduction](https://polar.sh/docs/introduction.md)
+- [Next.js guide](https://polar.sh/docs/guides/nextjs.md)
+- [Next.js adapter](https://polar.sh/docs/integrate/sdk/adapters/nextjs.md)
+- [TypeScript SDK](https://polar.sh/docs/integrate/sdk/typescript.md)
+- [Checkout sessions](https://polar.sh/docs/features/checkout/session.md)
+- [Checkout links](https://polar.sh/docs/features/checkout/links.md)
+- [Products](https://polar.sh/docs/features/products.md)
+- [Subscriptions](https://polar.sh/docs/features/subscriptions/introduction.md)
+- [Webhooks](https://polar.sh/docs/integrate/webhooks/endpoints.md)
+- [Customer state](https://polar.sh/docs/integrate/customer-state.md)
+- [Sandbox](https://polar.sh/docs/integrate/sandbox.md)
+- [Customer portal](https://polar.sh/docs/features/customer-portal/introduction.md)

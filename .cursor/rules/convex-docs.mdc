@@ -1,0 +1,29 @@
+---
+description: Official Convex documentation — fetch live markdown instead of guessing APIs
+alwaysApply: true
+---
+
+# Convex documentation
+
+Use the official Convex docs as the source of truth: [https://docs.convex.dev/home](https://docs.convex.dev/home)
+
+When implementing or changing Convex code, fetch the relevant page as markdown rather than relying on memory.
+
+- Page markdown: `https://docs.convex.dev/<path>.md` (or request `Accept: text/markdown`)
+- Docs index: [https://docs.convex.dev/llms.txt](https://docs.convex.dev/llms.txt)
+- Platform overview: [https://www.convex.dev/llms.txt](https://www.convex.dev/llms.txt)
+
+This repo’s app is Next.js (`flashycardy`). Start with:
+
+- [Next.js Quickstart](https://docs.convex.dev/quickstart/nextjs.md)
+- [Next.js App Router](https://docs.convex.dev/client/nextjs/app-router.md)
+- [Functions](https://docs.convex.dev/functions/overview.md)
+- [Queries](https://docs.convex.dev/functions/query-functions.md)
+- [Mutations](https://docs.convex.dev/functions/mutation-functions.md)
+- [Database](https://docs.convex.dev/database/overview.md)
+- [Schemas](https://docs.convex.dev/database/schemas.md)
+- [Authentication](https://docs.convex.dev/auth/overview.md)
+- [Best Practices](https://docs.convex.dev/understanding/best-practices.md)
+- [The Zen of Convex](https://docs.convex.dev/understanding/zen.md)
+
+Follow `.cursor/rules/convex_rules.mdc` for function syntax, validators, schema, queries, mutations, actions, scheduling, and file storage.
