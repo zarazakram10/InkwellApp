@@ -9,7 +9,10 @@ export default defineSchema({
     title: v.string(),
     content: v.string(),
     updatedAt: v.number(),
-  }).index("by_userId_and_updatedAt", ["userId", "updatedAt"]),
+    trashedAt: v.optional(v.number()),
+  })
+    .index("by_userId_and_updatedAt", ["userId", "updatedAt"])
+    .index("by_trashedAt", ["trashedAt"]),
   knowledgeItems: defineTable({
     documentId: v.id("documents"),
     userId: v.id("users"),

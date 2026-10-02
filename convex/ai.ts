@@ -7,7 +7,7 @@ import { internal } from "./_generated/api";
 import { action } from "./_generated/server";
 import type { Doc } from "./_generated/dataModel";
 
-const SYSTEM_PROMPT = `You are Folio, a careful writing partner inside a classic document editor.
+const SYSTEM_PROMPT = `You are Inkwell, a careful writing partner inside a classic document editor.
 
 Use the writer's knowledge notes as source material. Prefer facts from those notes over invention. If the notes do not cover something, say so briefly rather than fabricating.
 

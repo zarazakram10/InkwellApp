@@ -13,7 +13,7 @@ export default function LandingPage() {
           Write with your sources at hand, and a partner that uses them.
         </h1>
         <p className="mt-6 max-w-xl text-lg leading-8 text-muted">
-          Folio keeps the page in the center, your knowledge in the margin, and
+          Inkwell keeps the page in the center, your knowledge in the margin, and
           an editor who can draft or revise from those notes as you go.
         </p>
         <LandingCta />
@@ -25,7 +25,7 @@ export default function LandingPage() {
             },
             {
               title: "The notes",
-              body: "Add plain-text knowledge beside the document. Folio uses it as context.",
+              body: "Add plain-text knowledge beside the document. Inkwell uses it as context.",
             },
             {
               title: "The partner",

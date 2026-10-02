@@ -54,7 +54,7 @@ export function AiChat({
       <div className="border-b border-line px-4 py-4">
         <h2 className="text-lg">Writing partner</h2>
         <p className="mt-1 font-sans text-xs leading-5 text-muted">
-          Ask Folio to draft or revise the page using your knowledge notes.
+          Ask Inkwell to draft or revise the page using your knowledge notes.
         </p>
       </div>
       <div className="min-h-0 flex-1 space-y-3 overflow-auto px-4 py-4">
@@ -88,7 +88,7 @@ export function AiChat({
           value={draft}
           onChange={(event) => setDraft(event.target.value)}
           rows={3}
-          placeholder="Ask Folio to write or edit this document"
+          placeholder="Ask Inkwell to write or edit this document"
         />
         {error ? <p className="font-sans text-xs text-walnut">{error}</p> : null}
         <Button type="submit" className="w-full" disabled={pending}>

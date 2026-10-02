@@ -6,10 +6,14 @@ import { useAuthActions } from "@convex-dev/auth/react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 
-export function AuthForm() {
+export function AuthForm({
+  initialFlow = "signIn",
+}: {
+  initialFlow?: "signIn" | "signUp";
+}) {
   const router = useRouter();
   const { signIn } = useAuthActions();
-  const [flow, setFlow] = useState<"signIn" | "signUp">("signIn");
+  const [flow, setFlow] = useState<"signIn" | "signUp">(initialFlow);
   const [error, setError] = useState<string | null>(null);
   const [pending, setPending] = useState(false);
 
@@ -34,6 +38,46 @@ export function AuthForm() {
 
   return (
     <form onSubmit={handleSubmit} className="space-y-4">
+      <div>
+        <h1 className="text-3xl">
+          {flow === "signUp" ? "Create your account" : "Welcome back"}
+        </h1>
+        <p className="mt-2 text-muted">
+          {flow === "signUp"
+            ? "Sign up to keep your documents and notes."
+            : "Sign in to open your documents and notes."}
+        </p>
+      </div>
+      <div className="grid grid-cols-2 gap-1 rounded-2xl bg-stone p-1">
+        <button
+          type="button"
+          className={`rounded-xl px-3 py-2 text-sm ${
+            flow === "signIn"
+              ? "bg-card text-ink shadow-soft"
+              : "text-muted hover:text-ink"
+          }`}
+          onClick={() => {
+            setError(null);
+            setFlow("signIn");
+          }}
+        >
+          Sign in
+        </button>
+        <button
+          type="button"
+          className={`rounded-xl px-3 py-2 text-sm ${
+            flow === "signUp"
+              ? "bg-card text-ink shadow-soft"
+              : "text-muted hover:text-ink"
+          }`}
+          onClick={() => {
+            setError(null);
+            setFlow("signUp");
+          }}
+        >
+          Sign up
+        </button>
+      </div>
       {flow === "signUp" ? (
         <label className="block space-y-1.5">
           <span className="font-sans text-xs uppercase tracking-[0.16em] text-muted">
@@ -70,24 +114,8 @@ export function AuthForm() {
       <input name="flow" type="hidden" value={flow} />
       {error ? <p className="text-sm text-walnut">{error}</p> : null}
       <Button type="submit" className="w-full" disabled={pending}>
-        {pending
-          ? "Please wait…"
-          : flow === "signIn"
-            ? "Sign in"
-            : "Create account"}
+        {pending ? "Please wait…" : flow === "signIn" ? "Sign in" : "Sign up"}
       </Button>
-      <button
-        type="button"
-        className="w-full text-center text-sm text-muted hover:text-ink"
-        onClick={() => {
-          setError(null);
-          setFlow(flow === "signIn" ? "signUp" : "signIn");
-        }}
-      >
-        {flow === "signIn"
-          ? "Need an account? Create one"
-          : "Already writing here? Sign in"}
-      </button>
     </form>
   );
 }

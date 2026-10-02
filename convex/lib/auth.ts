@@ -15,10 +15,15 @@ export async function requireUserId(ctx: DbCtx): Promise<Id<"users">> {
 export async function requireOwnedDocument(
   ctx: DbCtx,
   documentId: Id<"documents">,
+  options?: { allowTrashed?: boolean },
 ): Promise<Doc<"documents">> {
   const userId = await requireUserId(ctx);
   const document = await ctx.db.get(documentId);
-  if (document === null || document.userId !== userId) {
+  if (
+    document === null ||
+    document.userId !== userId ||
+    (document.trashedAt !== undefined && !options?.allowTrashed)
+  ) {
     throw new Error("Document not found");
   }
   return document;

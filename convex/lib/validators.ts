@@ -7,6 +7,7 @@ export const documentValidator = v.object({
   title: v.string(),
   content: v.string(),
   updatedAt: v.number(),
+  trashedAt: v.optional(v.number()),
 });
 
 export const knowledgeItemValidator = v.object({

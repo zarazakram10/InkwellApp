@@ -17,7 +17,7 @@ const sourceSans = Source_Sans_3({
 });
 
 export const metadata: Metadata = {
-  title: "Folio",
+  title: "Inkwell",
   description: "A quiet writing studio with knowledge at hand and an AI partner.",
 };
 
